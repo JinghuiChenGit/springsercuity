@@ -20,7 +20,7 @@ public class WebController {
     }
 
     @RequestMapping("/vip")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('admin')")
     public String vip(HttpSession session){
         log.info((String)session.getAttribute("username"));
         return "web/vip";
